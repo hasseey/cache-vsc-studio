@@ -21,6 +21,15 @@ function activate(context) {
     });
 
     context.subscriptions.push(disposable);
+
+    var disposable = vscode.commands.registerCommand('extension.config', function () {
+        // The code you place here will be executed every time your command is executed
+
+        // Display a message box to the user
+        vscode.window.showInformationMessage('Hello World!');
+    });
+
+    context.subscriptions.push(disposable);
 }
 exports.activate = activate;
 
