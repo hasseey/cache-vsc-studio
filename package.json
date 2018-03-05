@@ -1,0 +1,54 @@
+{
+	"name": "cache-vsc-studio",
+	"displayName": "Cache-VSC-Studio",
+	"description": "Cache Studio By Visual Code",
+	"version": "0.0.0",
+	"publisher": "hasseey",
+	"engines": {
+		"vscode": "^1.14.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.config",
+		"onLanguage: cos"
+	],
+	"main": "./extension",
+	"contributes": {
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.config",
+					"when": "explorerResourceIsFolder"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.config",
+				"title": "LocalSetting"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.config",
+				"key": "ctrl+alt+s",
+				"mac": "cmd+option+s"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^2.0.3",
+		"vscode": "^1.0.0",
+		"mocha": "^2.3.3",
+		"eslint": "^3.6.0",
+		"jquery": "^3.2.1",
+		"@types/node": "^6.0.40",
+		"@types/mocha": "^2.2.32"
+	}
+}
